@@ -12,6 +12,7 @@ from pythoria.gameview import GameView
 from pythoria.dungeon import Dungeon
 from pythoria.dungeonview import ScrollingView
 from pythoria.player import Player
+from pythoria.random_dungeon import DungeonGenerator
 
 
 class DirectionForCommand():
@@ -105,8 +106,8 @@ if __name__ == '__main__':
     """
     win = pygcurse.PygcurseWindow(80, 30)
     win.font = pygame.font.Font(pygame.font.match_font('consolas'), 18)
-    level1 = Dungeon.load_from_file('map/bigmap.txt')
-    player = Player(1, 1)
+    level1 = Dungeon.generate(35, 20, 10)
+    player = Player()
     level1.add_player(player)
     msgbox = MessageBox()
 
